@@ -4,6 +4,7 @@
  This software is released under the MIT License.
  https://opensource.org/licenses/MIT
 -->
+![GitHub](https://img.shields.io/github/license/jtplaarj/IceCream-Bash)
 
 # IceCream-bash - Never use `echo` to debug again
 
