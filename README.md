@@ -53,6 +53,7 @@ This project provides two different commands:
 
 1. `ic` prints the line, file name, function name, name of variable and value.
 2. `ict` prints all the call tree.
+3. The `icp` and `ictp` variants just print a message string, with similar line preambles.
 
 The usage in both cases is the same:
 
