@@ -19,10 +19,14 @@ jobs:
     steps:
       - name: Install packages
         run: apk add diffutils bats
-
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Run bash-tpl tests
+        with:
+          submodules: true        
+      - name: Git Sumbodule Update
+        run: |
+          git pull --recurse-submodules
+          git submodule update --remote --recursive
+      - name: Run bash tests
         run: cd test && bats test.bats
 
