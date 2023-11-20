@@ -1,0 +1,28 @@
+name: BATS Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  bats:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        bash: ["bash:5.0", "bash:5.1", "bash:5.2"]
+    container: 
+      image: ${{ matrix.bash }}
+    steps:
+      - name: Install packages
+        run: apk add diffutils bats
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run bash-tpl tests
+        run: cd test && bats test.bats
+

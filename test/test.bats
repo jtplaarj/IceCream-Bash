@@ -6,8 +6,8 @@
 # https://opensource.org/licenses/MIT
 
 function setup() {
-    load '/home/linuxbrew/.linuxbrew/lib/bats-support/load.bash'
-    load '/home/linuxbrew/.linuxbrew/lib/bats-assert/load.bash'
+    load 'test_helper/bats-support/load'
+    load 'test_helper/bats-assert/load'
 }
 
 @test "Single file, no subfunctions" {
