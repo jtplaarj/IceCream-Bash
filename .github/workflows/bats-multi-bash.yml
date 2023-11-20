@@ -18,7 +18,7 @@ jobs:
       image: ${{ matrix.bash }}
     steps:
       - name: Install packages
-        run: apk add diffutils bats
+        run: apk add diffutils bats git
       - name: Checkout code
         uses: actions/checkout@v4
         with:
