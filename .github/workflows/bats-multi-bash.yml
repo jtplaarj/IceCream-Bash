@@ -11,6 +11,7 @@ on:
 jobs:
   bats:
     runs-on: ubuntu-latest
+    container: <image with Git v2.18+ installed>
     strategy:
       matrix:
         bash: ["bash:5.0", "bash:5.1", "bash:5.2"]
@@ -20,10 +21,10 @@ jobs:
       - name: Install packages
         run: apk add diffutils bats
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           submodules: true        
-      - name: Git Sumbodule Update
+      - name: Git Submodule Update
         run: |
           git pull --recurse-submodules
           git submodule update --remote --recursive
