@@ -21,8 +21,10 @@ jobs:
         run: apk add diffutils bats
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Checkout submodules
+        uses: textbook/git-checkout-submodule-action@master
         with:
-          submodules: recursive
-      - name: Run bash-tpl tests
+          remote: true
+      - name: Run bash tests
         run: cd test && bats test.bats
 
