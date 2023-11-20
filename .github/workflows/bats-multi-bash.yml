@@ -20,11 +20,9 @@ jobs:
       - name: Install packages
         run: apk add diffutils bats
       - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Checkout submodules
-        uses: textbook/git-checkout-submodule-action@master
+        uses: actions/checkout@v4
         with:
-          remote: true
+          submodules: recursive
       - name: Run bash tests
         run: cd test && bats test.bats
 
